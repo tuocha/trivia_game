@@ -1,0 +1,55 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/sigils.png");
+}
+
+#gameArea {
+    width: 80%;
+    height: 500px;
+    margin: 5% 10%;
+    border: solid black 1px;
+    background-color: palegoldenrod;
+}
+
+#start{
+    background-color: gold;
+    height: 10%;
+    width: 10%;
+    border-radius: 12%;
+    font-size: 18pt;
+    font-weight: bolder;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 46%;
+}
+
+#remaining-time {
+    text-align: center;
+    font-size: 24pt;
+    color: blue;
+}
+
+#question-display, #choices-display, #results {
+    text-align: center;
+    font-size: 28pt;
+    font: bolder;
+}
+
+.option {
+    margin-top: 10%;
+    background-color: navy;
+    color: white;
+    font-size: 11pt;
+    height: 50px;
+    width: 20%;
+}
+
+.start-button-after {
+    position: absolute;
+    bottom: 0;
+}
