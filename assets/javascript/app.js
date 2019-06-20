@@ -21,7 +21,7 @@ var trivia = {
         q4: "Catelyn Stark bore how many children?",
         q5: "What are the Targaryen colors?",
         q6: "The Arbor is in which province?",
-        q7: "Jon Show was elected which Lord Commander of the Night's Watch?",
+        q7: "Jon Sn ow was elected which Lord Commander of the Night's Watch?",
         q8: "Who is said to have built the Wall?"
     },
     options: {
@@ -85,7 +85,7 @@ var trivia = {
         }
         else if (trivia.timer === -1) {
             trivia.unanswered++;
-            trivia.resultId = false;
+            resultId = false;
             clearInterval(trivia.timerId);
             resultId = setTimeout(trivia.questionRemove, 1000);
             $("#results").html("<h1> Out of time! The answer was " + Object.values(trivia.answers)[trivia.current] +"</h1>");
@@ -108,19 +108,22 @@ var trivia = {
     guessChecker: function () {
         var resultId;
         var currentAnswer = Object.values(trivia.answers)[trivia.current];
+        var clicked = false;
 
-        if ($(this).text() === currentAnswer) {
+        if ($(this).text() === currentAnswer && clicked === false) {
+            clicked = true;
             trivia.correct++;
             clearInterval(trivia.timerId);
             resultId = setTimeout(trivia.questionRemove, 2000);
             $("#results").html("<h1>Correct.</h1>");
         }
-        else {
+        else if (clicked === false){
+            clicked = true;
             trivia.incorrect++;
             clearInterval(trivia.timerId);
             resultId = setTimeout(trivia.questionRemove, 2000);
             $("#results").html("<h1>Incorrect. The answer was " + Object.values(trivia.answers)[trivia.current] + "</h1>");
-        }
+        } 
 
     },
 
